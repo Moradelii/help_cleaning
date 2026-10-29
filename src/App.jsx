@@ -10,18 +10,18 @@ gsap.registerPlugin(ScrollTrigger);
 
 // ✅ IMÁGENES ACTUALIZADAS (Incluye las faltantes)
 const galleryItems = [
-  { image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=800&q=80', title: 'Spotless Kitchen', category: 'Residential', description: 'Detailed cleaning designed to leave kitchen surfaces fresh and spotless.' },
+  { image: 'gallery/bathrooms.jpg', title: 'Spotless bathrooms', category: 'Residential', description: 'Detailed cleaning, designed to leave bathroom surfaces spotless and looking like new.' },
   { image: 'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=800&q=80', title: 'Fresh Vacation Rental', category: 'Vacation Rental', description: 'Professional turnover cleaning for guest-ready vacation properties.' },
   { image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80', title: 'Modern Office Space', category: 'Commercial', description: 'Professional cleaning solutions for modern workplaces.' },
   { image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=800&q=80', title: 'Deep Cleaning Detail', category: 'Deep Cleaning', description: 'Thorough attention to every surface and corner.' },
   { image: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=800&q=80', title: 'Move-In Ready', category: 'Move-In / Move-Out', description: 'Complete cleaning preparation for new beginnings.' },
-  { image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80', title: 'Post-Renovation Clean', category: 'Post-Construction', description: 'Detailed cleanup after construction projects.' },
+  { image: 'gallery/post-renovation.jpg', title: 'Post-Renovation Clean', category: 'Post-Construction', description: 'Detailed cleanup after construction projects.' },
   { image: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=800&q=80', title: 'Luxury Bathroom', category: 'Residential', description: 'Immaculate bathroom cleaning with attention to detail.' },
   { image: 'https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?auto=format&fit=crop&w=800&q=80', title: 'Beach House Rental', category: 'Vacation Rental', description: 'Coastal property cleaning for vacation guests.' },
   { image: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=800&q=80', title: 'Corporate Office', category: 'Commercial', description: 'Professional workspace cleaning services.' },
-  { image: 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=800&q=80', title: 'Kitchen Deep Clean', category: 'Deep Cleaning', description: 'Comprehensive kitchen cleaning from top to bottom.' },
+  { image: 'gallery/kitchen.png', title: 'Kitchen Deep Clean', category: 'Deep Cleaning', description: 'Comprehensive kitchen cleaning from top to bottom.' },
   { image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80', title: 'Move-Out Service', category: 'Move-In / Move-Out', description: 'Thorough cleaning for property transitions.' },
-  { image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80', title: 'Construction Cleanup', category: 'Post-Construction', description: 'Professional post-construction cleaning services.' },
+  { image: 'gallery/post2.jpg', title: 'Construction Cleanup', category: 'Post-Construction', description: 'Professional post-construction cleaning services.' },
   { image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&q=80', title: 'Living Room Refresh', category: 'Residential', description: 'Fresh and clean living spaces for families.' },
   { image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80', title: 'Airbnb Turnover', category: 'Vacation Rental', description: 'Quick and efficient vacation rental cleaning.' },
   { image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&q=80', title: 'Medical Office', category: 'Commercial', description: 'Sanitized and professional office environments.' },
@@ -40,13 +40,13 @@ const services = [
   { icon: HardHat, title: 'Post-Construction Cleaning', description: 'Detailed cleanup after renovations or construction projects.' }
 ];
 
-const serviceAreas = ['Daytona Beach', 'Ormond Beach', 'Port Orange', 'Holly Hill', 'Palm Coast'];
+const serviceAreas = ['Patchogue', 'Farmingville', 'Holtsville', 'Coram', 'Yaphank'];
 
 // ✅ RESEÑAS BASADAS EN GOOGLE MAPS
 const reviews = [
-  { name: 'Sarah M.', rating: 5, text: "Jireh did an amazing job on my vacation rental in Daytona. The guests loved how spotless everything was. Highly recommend their turnover service!" },
+  { name: 'Sarah M.', rating: 5, text: "Help Cleaning did an amazing job on my vacation rental in Suffolk. The guests loved how spotless everything was. Highly recommend their turnover service!" },
   { name: 'Michael T.', rating: 5, text: "Professional, punctual, and detailed. They handled our post-construction cleanup perfectly. Every surface was dust-free." },
-  { name: 'Jennifer L.', rating: 5, text: "I've used several cleaning services in Port Orange, but Jireh is by far the best. Attention to detail is unmatched." }
+  { name: 'Jennifer L.', rating: 5, text: "I've used several cleaning services in Port Orange, but Help Cleaning is by far the best. Attention to detail is unmatched." }
 ];
 
 export default function App() {
@@ -149,16 +149,16 @@ export default function App() {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [lightboxIndex, closeLightbox, nextImage, prevImage]);
 
-  const navLinks = ['Home', 'Services', 'Our Experience', 'Gallery', 'Service Areas', 'Contact'];
+  const navLinks = ['Home', 'Services', 'Experience', 'Gallery', 'Contact'];
 
   return (
     <>
       {/* Schema.org JSON-LD */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org', '@type': 'CleaningService',
-        name: 'Jireh Professional Cleaning Services, LLC',
-        address: { '@type': 'PostalAddress', streetAddress: '1021 Imperial Dr', addressLocality: 'Daytona Beach', addressRegion: 'FL', postalCode: '32117', addressCountry: 'US' },
-        telephone: '+1-386-299-1753', areaServed: serviceAreas,
+        name: 'Help Cleaning LLC',
+        address: { '@type': 'PostalAddress', streetAddress: '160 Bellport Ave', addressLocality: 'Medford', addressRegion: 'NY', postalCode: '11763', addressCountry: 'US' },
+        telephone: '+1-631-334-2878', areaServed: serviceAreas,
         sameAs: ['https://www.facebook.com/p/Jireh-Professional-Cleaning-ServicesLlc']
       })}} />
 
@@ -168,15 +168,15 @@ export default function App() {
           <div className="flex justify-between items-center h-20">
             <div className="flex items-center">
               {/* ✅ LOGO TRANSPARENTE EN HEADER */}
-              <img src="/logo/jireh-logo.png" alt="Jireh Logo" className="h-20 w-auto" onError={(e) => { e.target.style.display = 'none'; }} />
-              <span className={`ml-3 font-serif text-xl ${isScrolled ? 'text-[#26302F]' : 'text-white'}`}>Jireh Professional Cleaning Services LLC</span>
+              <img src="/logo/logo.png" alt="Help Cleaning Logo" className="h-20 w-auto" onError={(e) => { e.target.style.display = 'none'; }} />
+              <span className={`ml-3 font-serif text-xl ${isScrolled ? 'text-[#26302F]' : 'text-white'}`}>Help Cleaning LLC</span>
             </div>
             <div className="hidden lg:flex items-center space-x-8">
               {navLinks.map((item) => (
                 <a key={item} href={`#${item.toLowerCase().replace(' ', '-')}`} className={`text-sm font-medium transition-colors hover:text-[#DCCBB5] ${isScrolled ? 'text-[#26302F]' : 'text-white'}`}>{item}</a>
               ))}
               <a href="#contact" className="bg-[#26302F] text-white px-6 py-2.5 rounded-full text-sm font-medium hover:bg-[#51483F] transition-colors">GET A FREE QUOTE</a>
-              <a href="tel:+13862991753" className={`text-sm font-medium flex items-center gap-2 ${isScrolled ? 'text-[#26302F]' : 'text-white'}`}><Phone className="w-4 h-4" /> CALL NOW</a>
+              <a href="tel:+16313342878" className={`text-sm font-medium flex items-center gap-2 ${isScrolled ? 'text-[#26302F]' : 'text-white'}`}><Phone className="w-4 h-4" /> CALL NOW</a>
             </div>
             <button onClick={() => setIsMenuOpen(!isMenuOpen)} className={`lg:hidden ${isScrolled ? 'text-[#26302F]' : 'text-white'}`} aria-label="Toggle menu">
               {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -191,7 +191,7 @@ export default function App() {
               ))}
               <div className="pt-4 space-y-3">
                 <a href="#contact" className="block w-full bg-[#26302F] text-white text-center px-6 py-3 rounded-full font-medium" onClick={() => setIsMenuOpen(false)}>GET A FREE QUOTE</a>
-                <a href="tel:+13862991753" className="block w-full border-2 border-[#26302F] text-[#26302F] text-center px-6 py-3 rounded-full font-medium" onClick={() => setIsMenuOpen(false)}>CALL NOW</a>
+                <a href="tel:+16313342878" className="block w-full border-2 border-[#26302F] text-[#26302F] text-center px-6 py-3 rounded-full font-medium" onClick={() => setIsMenuOpen(false)}>CALL NOW</a>
               </div>
             </div>
           </div>
@@ -205,15 +205,15 @@ export default function App() {
         </video>
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50" />
         <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
-          <p className="hero-element text-white/90 text-sm md:text-base tracking-[0.3em] uppercase mb-6">Professional Cleaning Services • Daytona Beach, FL</p>
+          <p className="hero-element text-white/90 text-sm md:text-base tracking-[0.3em] uppercase mb-6"></p>
           <h1 className="hero-element font-serif text-5xl md:text-7xl lg:text-8xl text-white mb-6 leading-tight">A Cleaner Space.<br />A Better Feeling.</h1>
           <p className="hero-element text-white/90 text-lg md:text-xl max-w-2xl mx-auto mb-8">Professional residential and commercial cleaning services designed to leave your space fresh, spotless and ready to enjoy.</p>
           <div className="hero-element flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <a href="#contact" className="bg-white text-[#26302F] px-8 py-4 rounded-full font-medium hover:bg-[#DCCBB5] transition-colors">GET A FREE QUOTE</a>
-            <a href="tel:+13862991753" className="border-2 border-white text-white px-8 py-4 rounded-full font-medium hover:bg-white hover:text-[#26302F] transition-colors">CALL NOW</a>
+            <a href="tel:+16313342878" className="border-2 border-white text-white px-8 py-4 rounded-full font-medium hover:bg-white hover:text-[#26302F] transition-colors">CALL NOW</a>
           </div>
           <div className="hero-element text-white/80 text-sm">
-            <p>Serving Daytona Beach & Surrounding Areas</p>
+            <p>Serving Suffolk & Surrounding Areas</p>
             <p className="mt-2 text-xs tracking-wider">Residential • Commercial • Vacation Rentals</p>
           </div>
         </div>
@@ -235,7 +235,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 animate-on-scroll">
             <h2 className="font-serif text-4xl md:text-5xl text-[#26302F] mb-6">Cleaning Services Designed Around You</h2>
-            <p className="text-[#26302F]/80 text-lg max-w-3xl mx-auto">From routine maintenance to detailed deep cleaning, Jireh Professional Cleaning Services helps keep homes, businesses and vacation properties looking their best.</p>
+            <p className="text-[#26302F]/80 text-lg max-w-3xl mx-auto">From routine maintenance to detailed deep cleaning, Help Cleaning LLC helps keep homes, businesses and vacation properties looking their best.</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, i) => (
@@ -254,14 +254,14 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="animate-on-scroll">
-              <h2 className="font-serif text-4xl md:text-5xl text-[#26302F] mb-6">More Than Clean.<br />It's the Jireh Standard.</h2>
+              <h2 className="font-serif text-4xl md:text-5xl text-[#26302F] mb-6">More Than Clean.<br />It's the Help Cleaning Standard.</h2>
               <p className="text-[#26302F]/80 text-lg mb-8">We believe a professionally cleaned space should feel different the moment you walk in. Our approach combines attention to detail, consistency and professional service.</p>
               <div className="space-y-6">
                 {[
                   { title: 'Attention to Detail', desc: 'Every area receives thoughtful attention, including the details that are easy to overlook.' },
                   { title: 'Professional Service', desc: 'A polished, respectful and dependable experience from booking to completion.' },
                   { title: 'Flexible Solutions', desc: 'Cleaning services adapted to homes, businesses, vacation rentals and specific needs.' },
-                  { title: 'Local Coverage', desc: 'Serving Daytona Beach and surrounding communities.' }
+                  { title: 'Local Coverage', desc: 'Serving Suffolk surrounding communities.' }
                 ].map((item, i) => (
                   <div key={i} className="flex gap-4">
                     <div className="flex-shrink-0 w-8 h-8 bg-[#26302F] rounded-full flex items-center justify-center"><Check className="w-4 h-4 text-white" /></div>
@@ -288,10 +288,10 @@ export default function App() {
       </section>
 
       {/* Experience Steps */}
-      <section id="our-experience" className="py-20 md:py-32 bg-[#EDFEFF]">
+      <section id="experience" className="py-20 md:py-32 bg-[#EDFEFF]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 animate-on-scroll">
-            <h2 className="font-serif text-4xl md:text-5xl text-[#26302F] mb-6">The Jireh Cleaning Experience</h2>
+            <h2 className="font-serif text-4xl md:text-5xl text-[#26302F] mb-6">The Help Cleaning Experience</h2>
             <p className="text-[#26302F]/80 text-lg max-w-2xl mx-auto">From your first request to the final detail, we make professional cleaning simple.</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
@@ -309,7 +309,7 @@ export default function App() {
             ))}
           </div>
           <div className="text-center animate-on-scroll">
-            <h3 className="font-serif text-2xl md:text-3xl text-[#26302F] mb-6">Ready to Experience the Jireh Standard?</h3>
+            <h3 className="font-serif text-2xl md:text-3xl text-[#26302F] mb-6">Ready to Experience the Help Cleaning Standard?</h3>
             <a href="#contact" className="inline-block bg-[#26302F] text-white px-8 py-4 rounded-full font-medium hover:bg-[#51483F] transition-colors">GET A FREE QUOTE</a>
           </div>
         </div>
@@ -355,12 +355,12 @@ export default function App() {
         </div>
       )}
 
-      {/* Service Areas */}
-      <section id="service-areas" className="py-20 md:py-32 bg-[#EDFFFA]">
+      {/* Services */}
+      <section id="services" className="py-20 md:py-32 bg-[#EDFFFA]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 animate-on-scroll">
-            <h2 className="font-serif text-4xl md:text-5xl text-[#26302F] mb-6">Proudly Serving Daytona Beach & Surrounding Areas</h2>
-            <p className="text-[#26302F]/80 text-lg max-w-3xl mx-auto">Professional cleaning services for homes, offices, vacation rentals and properties throughout Daytona Beach and surrounding communities.</p>
+            <h2 className="font-serif text-4xl md:text-5xl text-[#26302F] mb-6">Proudly Serving Suffolk & Surrounding Areas</h2>
+            <p className="text-[#26302F]/80 text-lg max-w-3xl mx-auto">Professional cleaning services for homes, offices, vacation rentals and properties throughout Suffolk and surrounding communities.</p>
           </div>
           <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-6">
             {serviceAreas.map((area, i) => (
@@ -406,7 +406,7 @@ export default function App() {
           <p className="text-white/90 text-lg mb-8 animate-on-scroll">Tell us what you need cleaned and let's create a cleaner, fresher space for you.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-on-scroll">
             <a href="#contact" className="bg-white text-[#26302F] px-8 py-4 rounded-full font-medium hover:bg-[#DCCBB5] transition-colors">GET A FREE QUOTE</a>
-            <a href="tel:+13862991753" className="border-2 border-white text-white px-8 py-4 rounded-full font-medium hover:bg-white hover:text-[#26302F] transition-colors">CALL +1 (386) 299-1753</a>
+            <a href="tel:+16313342878" className="border-2 border-white text-white px-8 py-4 rounded-full font-medium hover:bg-white hover:text-[#26302F] transition-colors">CALL +1 (631) 334-2878</a>
           </div>
         </div>
       </section>
@@ -422,19 +422,19 @@ export default function App() {
               {/* ✅ MAPA EXACTO DE UBICACIÓN */}
               <div className="rounded-2xl overflow-hidden shadow-lg mb-8 h-[300px]">
                 <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2987.8793494494635!2d-81.0620759!3d29.221170599999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47eed853f221e4b5%3A0xc6a908a7a2fa3c01!2sJireh%20Professional%20Cleaning%20Services%2CLLC!5e1!3m2!1ses!2shn!4v1789766805245!5m2!1ses!2shn" 
+                  src="https://www.google.com/maps?q=160+Bellport+Ave,+Medford,+NY+11763&output=embed" 
                   width="100%" height="100%" style={{ border: 0 }} allowFullScreen="" loading="lazy" referrerPolicy="strict-origin-when-cross-origin"
-                  title="Jireh Location Map"
+                  title="Help Cleaning Location Map"
                 ></iframe>
               </div>
 
               <div className="space-y-6 mb-8">
-                <div className="flex items-start gap-4"><MapPin className="w-6 h-6 text-[#DCCBB5] flex-shrink-0 mt-1" /><div><h3 className="font-medium text-[#26302F] mb-1">Address</h3><p className="text-[#26302F]/70">1021 Imperial Dr<br />Daytona Beach, FL 32117<br />United States</p></div></div>
-                <div className="flex items-start gap-4"><Phone className="w-6 h-6 text-[#DCCBB5] flex-shrink-0 mt-1" /><div><h3 className="font-medium text-[#26302F] mb-1">Phone</h3><a href="tel:+13862991753" className="text-[#26302F]/70 hover:text-[#26302F]">+1 (386) 299-1753</a></div></div>
-                <div className="flex items-start gap-4"><Facebook className="w-6 h-6 text-[#DCCBB5] flex-shrink-0 mt-1" /><div><h3 className="font-medium text-[#26302F] mb-1">Facebook</h3><a href="https://www.facebook.com/p/Jireh-Professional-Cleaning-ServicesLlc" target="_blank" rel="noopener noreferrer" className="text-[#26302F]/70 hover:text-[#26302F]">Follow Jireh on Facebook</a></div></div>
+                <div className="flex items-start gap-4"><MapPin className="w-6 h-6 text-[#DCCBB5] flex-shrink-0 mt-1" /><div><h3 className="font-medium text-[#26302F] mb-1">Address</h3><p className="text-[#26302F]/70">160 Bellport Ave<br />Medford, Suffolk, Long Island, NY 11763<br />United States</p></div></div>
+                <div className="flex items-start gap-4"><Phone className="w-6 h-6 text-[#DCCBB5] flex-shrink-0 mt-1" /><div><h3 className="font-medium text-[#26302F] mb-1">Phone</h3><a href="tel:+16313342878" className="text-[#26302F]/70 hover:text-[#26302F]">+1 (631) 334-2878</a></div></div>
+                <div className="flex items-start gap-4"><Facebook className="w-6 h-6 text-[#DCCBB5] flex-shrink-0 mt-1" /><div><h3 className="font-medium text-[#26302F] mb-1">Facebook</h3><a href="https://www.facebook.com/p/Jireh-Professional-Cleaning-ServicesLlc" target="_blank" rel="noopener noreferrer" className="text-[#26302F]/70 hover:text-[#26302F]">Follow Help Cleaning on Facebook</a></div></div>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="tel:+13862991753" className="bg-[#26302F] text-white px-6 py-3 rounded-full font-medium hover:bg-[#51483F] transition-colors text-center">CALL NOW</a>
+                <a href="tel:+16313342878" className="bg-[#26302F] text-white px-6 py-3 rounded-full font-medium hover:bg-[#51483F] transition-colors text-center">CALL NOW</a>
                 <a href="https://www.facebook.com/p/Jireh-Professional-Cleaning-ServicesLlc" target="_blank" rel="noopener noreferrer" className="border-2 border-[#26302F] text-[#26302F] px-6 py-3 rounded-full font-medium hover:bg-[#26302F] hover:text-white transition-colors text-center">FOLLOW ON FACEBOOK</a>
               </div>
             </div>
@@ -464,9 +464,9 @@ export default function App() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
             <div>
               {/* ✅ LOGO TRANSPARENTE EN FOOTER */}
-              <img src="/logo/jireh-logo.png" alt="Jireh Logo" className="h-24 w-auto mb-4" onError={(e) => { e.target.style.display = 'none'; }} />
-              <h3 className="font-serif text-xl mb-4">Jireh Professional Cleaning Services, LLC</h3>
-              <p className="text-white/70 text-sm">Professional cleaning services for homes, businesses and vacation properties in Daytona Beach and surrounding areas.</p>
+              <img src="/logo/logo.png" alt="Help Cleaning Logo" className="h-24 w-auto mb-4" onError={(e) => { e.target.style.display = 'none'; }} />
+              <h3 className="font-serif text-xl mb-4">Help Cleaning LLC</h3>
+              <p className="text-white/70 text-sm">Professional cleaning services for homes, businesses and vacation properties in Suffolk and surrounding areas.</p>
             </div>
             <div>
               <h4 className="font-medium mb-4">Quick Links</h4>
@@ -475,8 +475,8 @@ export default function App() {
             <div>
               <h4 className="font-medium mb-4">Contact</h4>
               <div className="space-y-3 text-sm text-white/70">
-                <p>1021 Imperial Dr</p><p>Daytona Beach, FL 32117</p>
-                <a href="tel:+13862991753" className="block hover:text-white transition-colors">+1 (386) 299-1753</a>
+                <p>160 Bellport Ave</p><p>Medford, Suffolk, Long Island, NY 11763</p>
+                <a href="tel:+16313342878" className="block hover:text-white transition-colors">+1 (631) 334-2878</a>
                 <a href="https://www.facebook.com/profile.php?id=61583974793483" target="_blank" rel="noopener noreferrer" className="block hover:text-white transition-colors">Facebook</a>
               </div>
             </div>
@@ -484,7 +484,7 @@ export default function App() {
               <h4 className="font-medium mb-4">Get in Touch</h4>
               <div className="space-y-3">
                 <a href="#contact" className="block bg-white text-[#26302F] px-6 py-3 rounded-full text-sm font-medium hover:bg-[#DCCBB5] transition-colors text-center">GET A FREE QUOTE</a>
-                <a href="tel:+13862991753" className="block border border-white text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-white hover:text-[#26302F] transition-colors text-center">CALL NOW</a>
+                <a href="tel:+16313342878" className="block border border-white text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-white hover:text-[#26302F] transition-colors text-center">CALL NOW</a>
               </div>
             </div>
           </div>
@@ -492,7 +492,7 @@ export default function App() {
           {/* ✅ FOOTER CON CRÉDITOS Y ENLACE */}
           <div className="border-t border-white/10 pt-8 text-center">
             <p className="text-white/60 text-sm">
-              © 2026 Jireh Professional Cleaning Services, LLC. All Rights Reserved. | By: <a href="mailto:moradelii@gmail.com" className="hover:text-[#DCCBB5] transition-colors">GDS Design & Digital Solutions</a>
+              © 2026 Help Cleaning LLC. All Rights Reserved. | By: <a href="mailto:moradelii@gmail.com" className="hover:text-[#DCCBB5] transition-colors">GDS Design & Digital Solutions</a>
             </p>
           </div>
         </div>
@@ -502,7 +502,7 @@ export default function App() {
       <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-4 z-40">
         <div className="flex gap-3">
           <a href="#contact" className="flex-1 bg-[#26302F] text-white py-3 rounded-full text-sm font-medium text-center">GET A FREE QUOTE</a>
-          <a href="tel:+13862991753" className="flex-1 border-2 border-[#26302F] text-[#26302F] py-3 rounded-full text-sm font-medium text-center">CALL NOW</a>
+          <a href="tel:+16313342878" className="flex-1 border-2 border-[#26302F] text-[#26302F] py-3 rounded-full text-sm font-medium text-center">CALL NOW</a>
         </div>
       </div>
     </>
